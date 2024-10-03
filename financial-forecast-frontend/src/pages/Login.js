@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Link bileşenini ekleyin
+import { Link } from 'react-router-dom'; 
 import Header from '../components/Header';
+import InfoSection from '../components/InfoSection';
 import Footer from '../components/Footer';
 
 const Login = () => {
@@ -65,6 +66,7 @@ const Login = () => {
                     </p>
                 </div>
             </section>
+            <InfoSection />
             <Footer />
         </div>
     );
