@@ -1,0 +1,17 @@
+# Node modules
+financial-forecast-backend/node_modules/
+financial-forecast-frontend/node_modules/
+
+# Environment variables
+.env
+
+# IDE-specific files
+.vs/
+.idea/
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
