@@ -1,6 +1,7 @@
 # Node modules
-financial-forecast-backend/node_modules/
-financial-forecast-frontend/node_modules/
+/node_modules/
+node_modules/
+node_modules
 
 # Environment variables
 .env
