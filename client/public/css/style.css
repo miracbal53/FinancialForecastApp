@@ -188,6 +188,11 @@ a:focus {
   color: #00bbf0;
 }
 
+/* Hamburger butonu için */
+.navbar-toggler {
+  display: block; /* Mobilde görünür olmalı */
+}
+
 .custom_nav-container .navbar-toggler {
   outline: none;
 }
@@ -929,3 +934,51 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* Stock Market */
+.stocks-section {
+  padding: 20px;
+}
+
+.stocks-container {
+  display: flex;
+  flex-wrap: wrap; /* Kartların birden fazla satıra geçmesini sağlar */
+  gap: 20px;
+  justify-content: center; /* Kartları ortalar */
+}
+
+.stock-card:hover {
+  transform: scale(1.05); /* Hover durumunda kartı büyüt */
+}
+
+.btn {
+  margin-top: 10px;
+  background-color: #007bff; /* Mavi arka plan rengi */
+  color: white; /* Buton üzerindeki yazı rengi */
+  border: none; /* Kenarlık yok */
+  border-radius: 5px; /* Kenar yuvarlama */
+  padding: 10px 15px; /* Buton içi boşluk */
+  cursor: pointer; /* Fare imlecini değiştir */
+  transition: background-color 0.3s ease; /* Arka plan rengi geçişi */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Hover durumunda daha koyu mavi */
+}
+
+.flag-icon {
+  width: 50px; /* Resim genişliği */
+  height: auto; /* Yüksekliği otomatik ayarla */
+}
+
+.stock-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+

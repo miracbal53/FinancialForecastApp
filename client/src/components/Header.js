@@ -2,29 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Kullanıcının giriş durumunu takip eden state
-  const navigate = useNavigate(); // Yönlendirme için useNavigate hook'u
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); // Admin durumu
+  const navigate = useNavigate();
 
-  // Component mount olduğunda (sayfa yüklendiğinde) kullanıcının giriş durumunu kontrol ediyoruz
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      setIsLoggedIn(true); // Token varsa kullanıcı giriş yapmış durumda
+      setIsLoggedIn(true);
+
+      // Kullanıcının admin olup olmadığını kontrol et
+      const role = localStorage.getItem('role');
+      if (role === 'admin') {
+        setIsAdmin(true);
+      }
     } else {
-      setIsLoggedIn(false); // Token yoksa kullanıcı giriş yapmamış durumda
+      setIsLoggedIn(false);
+      setIsAdmin(false);
     }
   }, []);
 
-  // Giriş veya çıkış işlemi
   const handleLoginLogout = () => {
     if (isLoggedIn) {
-      // Çıkış yapıldığında token'ı temizle ve giriş durumunu false yap
       localStorage.removeItem('token');
+      localStorage.removeItem('role');
       setIsLoggedIn(false);
+      setIsAdmin(false);
       alert('Başarıyla çıkış yaptınız.');
-      navigate('/'); // Anasayfaya yönlendir
+      navigate('/');
     } else {
-      // Giriş yap butonuna basıldığında login sayfasına yönlendir
       navigate('/login');
     }
   };
@@ -37,9 +43,20 @@ const Header = () => {
             <span>Finexo</span>
           </RouterLink>
 
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
-              {/* Giriş yapılmamışsa gösterilecek linkler */}
               {!isLoggedIn ? (
                 <>
                   <li className="nav-item">
@@ -57,19 +74,8 @@ const Header = () => {
                       Hakkımızda
                     </RouterLink>
                   </li>
-                  <li className="nav-item">
-                    <RouterLink className="nav-link" to="/#why">
-                      Neden Bizi Seçmelisiniz?
-                    </RouterLink>
-                  </li>
-                  <li className="nav-item">
-                    <RouterLink className="nav-link" to="/#team">
-                      Ekibimiz
-                    </RouterLink>
-                  </li>
                 </>
               ) : (
-                /* Giriş yapılmışsa gösterilecek linkler */
                 <>
                   <li className="nav-item">
                     <RouterLink className="nav-link" to="/">
@@ -96,9 +102,15 @@ const Header = () => {
                       Profil
                     </RouterLink>
                   </li>
+                  {isAdmin && (
+                    <li className="nav-item">
+                      <RouterLink className="nav-link" to="/admin">
+                        Admin Paneli
+                      </RouterLink>
+                    </li>
+                  )}
                 </>
               )}
-              {/* Her iki durumda da görünen İletişim linki */}
               <li className="nav-item">
                 <RouterLink className="nav-link" to="/iletisim">
                   İletişim
@@ -107,7 +119,6 @@ const Header = () => {
             </ul>
           </div>
 
-          {/* Giriş Yap / Çıkış Yap butonu */}
           <button onClick={handleLoginLogout} className="btn btn-primary">
             {isLoggedIn ? 'Çıkış Yap' : 'Giriş Yap'}
           </button>

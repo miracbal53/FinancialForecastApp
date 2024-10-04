@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // useNavigate ekledik
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import InfoSection from '../components/InfoSection';
 import Footer from '../components/Footer';
 
 const Register = () => {
-    const navigate = useNavigate(); // useNavigate hook'unu tanımlıyoruz
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,14 +15,19 @@ const Register = () => {
     const [favoriteExchange, setFavoriteExchange] = useState('');
     const [occupation, setOccupation] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState(''); // Başarılı kayıt için yeni state
 
     // Form gönderildiğinde çalışacak olan fonksiyon
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Hata ve başarı mesajlarını sıfırlama
+        setErrorMessage('');
+        setSuccessMessage('');
+
         // Şifre kontrolü
         if (password !== confirmPassword) {
-            alert("Şifreler uyuşmuyor");
+            setErrorMessage("Şifreler uyuşmuyor");
             return;
         }
 
@@ -54,8 +59,8 @@ const Register = () => {
             // API'den gelen yanıtı kontrol ediyoruz
             const data = await response.json();
             if (response.ok) {
-                alert('Kayıt başarılı!');  // Kayıt başarılı
-                navigate('/login');  // Başarılı kayıt sonrası giriş sayfasına yönlendirme
+                setSuccessMessage('Kayıt başarılı!');  // Başarılı mesajı
+                setTimeout(() => navigate('/login'), 2000); // 2 saniye sonra giriş sayfasına yönlendir
             } else {
                 setErrorMessage(data.message);  // Hata mesajını göster
             }
@@ -71,7 +76,11 @@ const Register = () => {
             <section className="register_section">
                 <div className="container">
                     <h2>Kayıt Ol</h2>
-                    {errorMessage && <p className="text-danger">{errorMessage}</p>} {/* Hata mesajını göster */}
+
+                    {/* Başarı ve hata mesajları */}
+                    {successMessage && <p className="text-success">{successMessage}</p>}
+                    {errorMessage && <p className="text-danger">{errorMessage}</p>}
+
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Ad</label>

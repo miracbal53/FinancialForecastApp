@@ -1,8 +1,11 @@
+// authRoutes.js
 const express = require('express');
-const router = express.Router();
-const { register, login } = require('../controllers/authController');
+const { register, login, registerAdmin } = require('../controllers/authController');
 
-router.post('/register', register);
-router.post('/login', login);
+const router = express.Router();
+
+router.post('/register', register);      // Normal kullanıcı kaydı
+router.post('/login', login);            // Kullanıcı giriş
+router.post('/registerAdmin', registerAdmin); // Admin kaydı için özel endpoint
 
 module.exports = router;

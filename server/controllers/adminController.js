@@ -1,13 +1,10 @@
-const Prediction = require('../models/Prediction');
+// controllers/adminController.js
+exports.createPrediction = (req, res) => {
+  // Tahmin oluşturma işlemleri burada yapılacak
+  res.json({ message: 'Tahmin başarıyla eklendi' });
+};
 
-exports.addPrediction = async (req, res) => {
-  const { market, prediction } = req.body;
-
-  try {
-    const newPrediction = new Prediction({ market, prediction, createdBy: req.user.userId });
-    await newPrediction.save();
-    res.status(201).json({ message: 'Tahmin başarıyla eklendi' });
-  } catch (error) {
-    res.status(500).json({ message: 'Server Hatası' });
-  }
+exports.manageUsers = (req, res) => {
+  // Kullanıcı yönetimi işlemleri burada yapılacak
+  res.json({ message: 'Kullanıcılar başarıyla yönetiliyor' });
 };

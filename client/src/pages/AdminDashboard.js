@@ -1,56 +1,30 @@
-import React, { useState } from 'react';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+import Register from './Register';
+import AdminDashboard from './AdminDashboard';
+import AdminRoute from '../routes/AdminRoute';
 
-const AdminDashboard = () => {
-  const [market, setMarket] = useState('');
-  const [prediction, setPrediction] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handlePredictionSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/api/admin/predictions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-        body: JSON.stringify({ market, prediction }),
-      });
-
-      const data = await response.json();
-      setMessage(data.message);
-    } catch (error) {
-      console.error('Error submitting prediction:', error);
-    }
-  };
-
+const App = () => {
   return (
-    <div>
-      <h2>Admin Paneli - Tahmin Girişi</h2>
-      <form onSubmit={handlePredictionSubmit}>
-        <div>
-          <label>Borsa Türü:</label>
-          <select value={market} onChange={(e) => setMarket(e.target.value)} required>
-            <option value="">Seçin</option>
-            <option value="bist">Bist</option>
-            <option value="kripto">Kripto</option>
-            <option value="forex">Forex</option>
-          </select>
-        </div>
-        <div>
-          <label>Tahmin:</label>
-          <textarea
-            value={prediction}
-            onChange={(e) => setPrediction(e.target.value)}
-            placeholder="Tahmininizi giriniz"
-            required
-          />
-        </div>
-        <button type="submit">Tahmin Ekle</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route 
+          path="/admin" 
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          } 
+        />
+      </Routes>
+    </Router>
   );
 };
 
-export default AdminDashboard;
+export default App;

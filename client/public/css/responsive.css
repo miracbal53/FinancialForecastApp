@@ -30,12 +30,31 @@
     margin: 5px 0;
   }
 
+  .navbar-collapse {
+    background-color: white; /* Arka plan rengi */
+    padding: 10px 0; /* Yastık boşluğu */
+  }
+
 
 }
 
 @media (max-width: 768px) {
   .about_section .img-box {
     margin-bottom: 45px;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Dikey dizilim */
+    margin-top: 10px; /* Üstten boşluk */
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px; /* Her bir öğe arasında boşluk */
+  }
+
+  .navbar-collapse {
+    background-color: white; /* Arka plan rengi */
+    padding: 10px 0; /* Yastık boşluğu */
   }
 
 }
@@ -100,8 +119,11 @@
 
 @media (max-width: 376px) {}
 
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
   }
 }
+
+
