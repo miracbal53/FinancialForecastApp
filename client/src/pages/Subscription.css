@@ -1,0 +1,196 @@
+.subscription-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 120px 0 60px;
+}
+
+.subscription-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.subscription-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #007bff11 0%, #ffffff 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.subscription-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+.subscription-header h2 {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subscription-header h2 span {
+  color: #007bff;
+}
+
+.subscription-header p {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.plans-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.plan-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-content {
+  display: flex;
+  height: 100%;
+}
+
+.plan-details {
+  padding: 30px;
+  flex: 1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.02);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  min-width: 140px;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  background: #ffd700;
+  color: #333;
+  padding: 8px 40px;
+  font-size: 14px;
+  font-weight: 600;
+  transform: rotate(45deg);
+}
+
+.plan-card h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.price {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.currency {
+  font-size: 24px;
+  color: #666;
+  vertical-align: top;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+}
+
+.period {
+  font-size: 16px;
+  color: #666;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.feature-item i {
+  color: #28a745;
+  margin-right: 10px;
+}
+
+.select-plan-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.select-plan-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.popular .select-plan-button {
+  background-color: #2ecc71;
+}
+
+@media (max-width: 992px) {
+  .plan-content {
+    flex-direction: column;
+  }
+
+  .button-container {
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-header h2 {
+    font-size: 32px;
+  }
+
+  .subscription-header p {
+    font-size: 16px;
+  }
+
+  .plan-card {
+    margin-bottom: 30px;
+  }
+}

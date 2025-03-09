@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link as RouterLink, useNavigate, useLocation } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false); // Admin durumu
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       setIsLoggedIn(true);
 
       // Kullanıcının admin olup olmadığını kontrol et
-      const role = localStorage.getItem('role');
-      if (role === 'admin') {
+      const role = localStorage.getItem("role");
+      if (role === "admin") {
         setIsAdmin(true);
       }
     } else {
@@ -24,23 +26,23 @@ const Header = () => {
 
   const handleLoginLogout = () => {
     if (isLoggedIn) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('role');
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
       setIsLoggedIn(false);
       setIsAdmin(false);
-      alert('Başarıyla çıkış yaptınız.');
-      navigate('/');
+      alert("Başarıyla çıkış yaptınız.");
+      navigate("/");
     } else {
-      navigate('/login');
+      navigate("/login");
     }
   };
 
   return (
     <header className="header_section">
-      <div className="container-fluid">
-        <nav className="navbar navbar-expand-lg custom_nav-container">
+      <div className="container">
+        <nav className="navbar navbar-expand-lg">
           <RouterLink className="navbar-brand" to="/">
-            <span>Finexo</span>
+            Finexo
           </RouterLink>
 
           <button
@@ -60,51 +62,106 @@ const Header = () => {
               {!isLoggedIn ? (
                 <>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/" ? "active" : ""
+                      }`}
+                      to="/"
+                    >
                       Anasayfa
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/#services">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/hizmetler" ? "active" : ""
+                      }`}
+                      to="/hizmetler"
+                    >
                       Hizmetlerimiz
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/#about">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/hakkimizda" ? "active" : ""
+                      }`}
+                      to="/hakkimizda"
+                    >
                       Hakkımızda
+                    </RouterLink>
+                  </li>
+                  <li className="nav-item">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/borsalar" ? "active" : ""
+                      }`}
+                      to="/borsalar"
+                    >
+                      Borsalar
                     </RouterLink>
                   </li>
                 </>
               ) : (
                 <>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/" ? "active" : ""
+                      }`}
+                      to="/"
+                    >
                       Anasayfa
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/borsalar">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/borsalar" ? "active" : ""
+                      }`}
+                      to="/borsalar"
+                    >
                       Borsalar
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/ai">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/ai" ? "active" : ""
+                      }`}
+                      to="/ai"
+                    >
                       Yapay Zeka Tahminleri
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/uzman">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/uzman" ? "active" : ""
+                      }`}
+                      to="/uzman"
+                    >
                       Uzman Tahminleri
                     </RouterLink>
                   </li>
                   <li className="nav-item">
-                    <RouterLink className="nav-link" to="/profil">
+                    <RouterLink
+                      className={`nav-link ${
+                        location.pathname === "/profil" ? "active" : ""
+                      }`}
+                      to="/profil"
+                    >
                       Profil
                     </RouterLink>
                   </li>
                   {isAdmin && (
                     <li className="nav-item">
-                      <RouterLink className="nav-link" to="/admin">
+                      <RouterLink
+                        className={`nav-link ${
+                          location.pathname === "/admin" ? "active" : ""
+                        }`}
+                        to="/admin"
+                      >
                         Admin Paneli
                       </RouterLink>
                     </li>
@@ -112,16 +169,20 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <RouterLink className="nav-link" to="/iletisim">
+                <RouterLink
+                  className={`nav-link ${
+                    location.pathname === "/iletisim" ? "active" : ""
+                  }`}
+                  to="/iletisim"
+                >
                   İletişim
                 </RouterLink>
               </li>
             </ul>
+            <button onClick={handleLoginLogout} className="btn btn-primary">
+              {isLoggedIn ? "Çıkış Yap" : "Giriş Yap"}
+            </button>
           </div>
-
-          <button onClick={handleLoginLogout} className="btn btn-primary">
-            {isLoggedIn ? 'Çıkış Yap' : 'Giriş Yap'}
-          </button>
         </nav>
       </div>
     </header>

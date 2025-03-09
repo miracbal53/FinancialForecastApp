@@ -1,0 +1,81 @@
+.stock-stats {
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.stats-scroll {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+}
+
+.stat-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.85rem;
+  min-width: 70px;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  min-width: 80px;
+  text-align: right;
+}
+
+.stat-change {
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.stat-change.positive {
+  color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.stat-change.negative {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+@media (max-width: 768px) {
+  .stats-scroll {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+  }
+
+  .stat-item {
+    flex-shrink: 0;
+  }
+}

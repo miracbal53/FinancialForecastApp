@@ -1,0 +1,202 @@
+.stocks-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.stocks-content {
+  padding: 120px 0 60px;
+}
+
+.stocks-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.stocks-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+.stocks-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.stocks-header h1 span {
+  color: #007bff;
+}
+
+.stocks-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Market Tables Styles */
+.market-tables {
+  margin-top: 40px;
+}
+
+.market-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.market-tab {
+  padding: 18px 26px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+
+  outline: none;
+}
+
+.market-tab:hover {
+  color: #007bff;
+}
+
+.market-tab.active {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.market-tab i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.market-tab:hover i {
+  transform: translateY(2px);
+}
+
+.market-tab:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.market-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.market-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.market-table th {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  font-weight: 600;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.market-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #dee2e6;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+.market-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.market-table .symbol {
+  font-weight: 700;
+  color: #007bff;
+  font-size: 0.9rem;
+}
+
+.market-table .price {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.market-table .high {
+  color: #28a745;
+  font-size: 0.85rem;
+}
+
+.market-table .low {
+  color: #dc3545;
+  font-size: 0.85rem;
+}
+
+.market-table .change {
+  font-weight: 600;
+  padding: 7px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.market-table .change.positive {
+  color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.market-table .change.negative {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+@media (max-width: 768px) {
+  .stocks-content {
+    padding: 100px 0 40px;
+  }
+
+  .stocks-header h1 {
+    font-size: 2rem;
+  }
+
+  .market-table {
+    font-size: 0.85rem;
+  }
+
+  .market-table th,
+  .market-table td {
+    padding: 6px 8px;
+  }
+
+  .tab-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Slider = () => {
   return (
@@ -11,7 +11,7 @@ const Slider = () => {
                 <div className="col-md-6">
                   <div className="detail-box">
                     <h1>
-                      Crypto <br />
+                      Crypto 1<br />
                       Currency
                     </h1>
                     <p>
@@ -20,11 +20,7 @@ const Slider = () => {
                       repudiandae earum suscipit fugiat molestias, veniam, vel
                       architecto veritatis delectus repellat modi impedit sequi.
                     </p>
-                    <div className="btn-box">
-                      <a href="#" className="btn1">
-                        Read More
-                      </a>
-                    </div>
+                    <div className="btn-box"></div>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -42,7 +38,7 @@ const Slider = () => {
                 <div className="col-md-6">
                   <div className="detail-box">
                     <h1>
-                      Crypto <br />
+                      Crypto 2<br />
                       Currency
                     </h1>
                     <p>
@@ -51,11 +47,7 @@ const Slider = () => {
                       repudiandae earum suscipit fugiat molestias, veniam, vel
                       architecto veritatis delectus repellat modi impedit sequi.
                     </p>
-                    <div className="btn-box">
-                      <a href="#" className="btn1">
-                        Read More
-                      </a>
-                    </div>
+                    <div className="btn-box"></div>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -73,7 +65,7 @@ const Slider = () => {
                 <div className="col-md-6">
                   <div className="detail-box">
                     <h1>
-                      Crypto <br />
+                      Crypto 3<br />
                       Currency
                     </h1>
                     <p>
@@ -82,11 +74,7 @@ const Slider = () => {
                       repudiandae earum suscipit fugiat molestias, veniam, vel
                       architecto veritatis delectus repellat modi impedit sequi.
                     </p>
-                    <div className="btn-box">
-                      <a href="#" className="btn1">
-                        Read More
-                      </a>
-                    </div>
+                    <div className="btn-box"></div>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -100,7 +88,11 @@ const Slider = () => {
         </div>
 
         <ol className="carousel-indicators">
-          <li data-target="#customCarousel1" data-slide-to="0" className="active"></li>
+          <li
+            data-target="#customCarousel1"
+            data-slide-to="0"
+            className="active"
+          ></li>
           <li data-target="#customCarousel1" data-slide-to="1"></li>
           <li data-target="#customCarousel1" data-slide-to="2"></li>
         </ol>

@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Predictions = () => {
   const [predictions, setPredictions] = useState([]);
-  const [market, setMarket] = useState('');
+  const [market, setMarket] = useState("");
 
   const fetchPredictions = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/predictions?market=${market}`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      });
+      const response = await fetch(
+        `http://localhost:5000/api/predictions?market=${market}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       const data = await response.json();
       setPredictions(data.predictions);
     } catch (error) {
-      console.error('Error fetching predictions:', error);
+      console.error("Error fetching predictions:", error);
     }
   };
 

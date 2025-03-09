@@ -1,26 +1,21 @@
-import React from 'react';
+import React from "react";
 
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Joseph Brown",
-      position: "Marketing Head",
-      image: "images/team-1.jpg",
-    },
-    {
-      name: "Nancy White",
-      position: "Marketing Head",
-      image: "images/team-2.jpg",
-    },
-    {
-      name: "Earl Martinez",
-      position: "Marketing Head",
+      name: "Sami Yetişken",
+      position: "Director",
       image: "images/team-3.jpg",
     },
     {
-      name: "Josephine Allard",
+      name: "Miraç Bal",
       position: "Marketing Head",
-      image: "images/team-4.jpg",
+      image: "images/mirac.jpeg",
+    },
+    {
+      name: "Ali Arslan",
+      position: "Tech Leader",
+      image: "images/bio.jpeg",
     },
   ];
 
@@ -36,10 +31,14 @@ const TeamSection = () => {
         <div className="team_container">
           <div className="row">
             {teamMembers.map((member, index) => (
-              <div className="col-lg-3 col-sm-6" key={index}>
+              <div className="col-lg-4 col-sm-6" key={index}>
                 <div className="box">
                   <div className="img-box">
-                    <img src={member.image} className="img1" alt={member.name} />
+                    <img
+                      src={member.image}
+                      className="img1"
+                      alt={member.name}
+                    />
                   </div>
                   <div className="detail-box">
                     <h5>{member.name}</h5>
@@ -47,19 +46,13 @@ const TeamSection = () => {
                   </div>
                   <div className="social_box">
                     <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
+                      <i className="fab fa-twitter" aria-hidden="true"></i>
                     </a>
                     <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
+                      <i className="fab fa-linkedin-in" aria-hidden="true"></i>
                     </a>
                     <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-youtube-play" aria-hidden="true"></i>
+                      <i className="fab fa-instagram" aria-hidden="true"></i>
                     </a>
                   </div>
                 </div>

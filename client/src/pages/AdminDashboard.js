@@ -1,11 +1,11 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import Login from './Login';
-import Register from './Register';
-import AdminDashboard from './AdminDashboard';
-import AdminRoute from '../routes/AdminRoute';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Login from "./Login";
+import Register from "./Register";
+import AdminDashboard from "./AdminDashboard";
+import AdminRoute from "../routes/AdminRoute";
 
 const App = () => {
   return (
@@ -14,13 +14,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route 
-          path="/admin" 
+        <Route
+          path="/admin"
           element={
             <AdminRoute>
               <AdminDashboard />
             </AdminRoute>
-          } 
+          }
         />
       </Routes>
     </Router>

@@ -1,0 +1,159 @@
+.subscription-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.subscription-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subscription-header h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subscription-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.subscription-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.plan-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.popular {
+  border: 2px solid var(--plan-color, #2ecc71);
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--plan-color, #2ecc71);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.plan-header h3 {
+  color: var(--plan-color, #3498db);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.plan-price .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.plan-price .amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.plan-price .period {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.plan-features {
+  margin: 30px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.feature-item i {
+  color: var(--plan-color, #3498db);
+  font-size: 1rem;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--plan-color, #3498db);
+  background: transparent;
+  color: var(--plan-color, #3498db);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.plan-button:hover {
+  background: var(--plan-color, #3498db);
+  color: white;
+}
+
+.plan-button.selected {
+  background: var(--plan-color, #3498db);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .subscription-section {
+    padding: 60px 0;
+  }
+
+  .subscription-header h2 {
+    font-size: 2rem;
+  }
+
+  .plan-card {
+    padding: 30px;
+  }
+
+  .plan-card.popular {
+    transform: scale(1);
+  }
+}

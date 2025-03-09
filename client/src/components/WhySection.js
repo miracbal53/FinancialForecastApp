@@ -1,6 +1,6 @@
 // src/components/WhySection.js
 
-import React from 'react';
+import React from "react";
 
 const WhySection = () => {
   return (
@@ -19,9 +19,11 @@ const WhySection = () => {
             <div className="detail-box">
               <h5>Expert Management</h5>
               <p>
-                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
-                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
-                id, aspernatur nihil. Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat
+                Incidunt odit rerum tenetur alias architecto asperiores omnis
+                cumque doloribus aperiam numquam! Eligendi corrupti, molestias
+                laborum dolores quod nisi vitae voluptate ipsa? In tempore
+                voluptate ducimus officia id, aspernatur nihil. Tempore laborum
+                nesciunt ut veniam, nemo officia ullam repudiandae repellat
                 veritatis unde reiciendis possimus animi autem natus
               </p>
             </div>
@@ -33,9 +35,11 @@ const WhySection = () => {
             <div className="detail-box">
               <h5>Secure Investment</h5>
               <p>
-                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
-                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
-                id, aspernatur nihil. Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat
+                Incidunt odit rerum tenetur alias architecto asperiores omnis
+                cumque doloribus aperiam numquam! Eligendi corrupti, molestias
+                laborum dolores quod nisi vitae voluptate ipsa? In tempore
+                voluptate ducimus officia id, aspernatur nihil. Tempore laborum
+                nesciunt ut veniam, nemo officia ullam repudiandae repellat
                 veritatis unde reiciendis possimus animi autem natus
               </p>
             </div>
@@ -47,9 +51,11 @@ const WhySection = () => {
             <div className="detail-box">
               <h5>Instant Trading</h5>
               <p>
-                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
-                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
-                id, aspernatur nihil. Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat
+                Incidunt odit rerum tenetur alias architecto asperiores omnis
+                cumque doloribus aperiam numquam! Eligendi corrupti, molestias
+                laborum dolores quod nisi vitae voluptate ipsa? In tempore
+                voluptate ducimus officia id, aspernatur nihil. Tempore laborum
+                nesciunt ut veniam, nemo officia ullam repudiandae repellat
                 veritatis unde reiciendis possimus animi autem natus
               </p>
             </div>
@@ -61,16 +67,15 @@ const WhySection = () => {
             <div className="detail-box">
               <h5>Happy Customers</h5>
               <p>
-                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
-                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
-                id, aspernatur nihil. Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat
+                Incidunt odit rerum tenetur alias architecto asperiores omnis
+                cumque doloribus aperiam numquam! Eligendi corrupti, molestias
+                laborum dolores quod nisi vitae voluptate ipsa? In tempore
+                voluptate ducimus officia id, aspernatur nihil. Tempore laborum
+                nesciunt ut veniam, nemo officia ullam repudiandae repellat
                 veritatis unde reiciendis possimus animi autem natus
               </p>
             </div>
           </div>
-        </div>
-        <div className="btn-box">
-          <a href="">Read More</a>
         </div>
       </div>
     </section>

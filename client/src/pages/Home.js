@@ -1,12 +1,13 @@
-import React from 'react';
-import Header from '../components/Header'; 
-import Slider from '../components/Slider'; 
-import ServiceSection from '../components/ServiceSection';
-import AboutSection from '../components/AboutSection';
-import WhySection from '../components/WhySection';
-import TeamSection from '../components/TeamSection';
-import InfoSection from '../components/InfoSection';
-import Footer from '../components/Footer';
+import React from "react";
+import Header from "../components/Header";
+import Slider from "../components/Slider";
+import ServiceSection from "../components/ServiceSection";
+import AboutSection from "../components/AboutSection";
+import WhySection from "../components/WhySection";
+import TeamSection from "../components/TeamSection";
+import InfoSection from "../components/InfoSection";
+import Footer from "../components/Footer";
+import SubscriptionPlans from "../components/SubscriptionPlans";
 
 const Home = () => {
   return (
@@ -17,15 +18,16 @@ const Home = () => {
             <img src="images/hero-bg.png" alt="Hero Background" />
           </div>
         </div>
-        
+
         <Header />
-        
+
         <Slider />
       </div>
 
-      <ServiceSection id="service"/>
-      <AboutSection id="about"/>
-      <WhySection id="why"/>
+      <ServiceSection id="service" />
+      <AboutSection id="about" />
+      <WhySection id="why" />
+      <SubscriptionPlans id="subscription" />
       <TeamSection id="team" />
       <InfoSection id="info" />
       <Footer />

@@ -10,7 +10,8 @@ const ServiceSection = () => {
               Our <span>Services</span>
             </h2>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration
             </p>
           </div>
           <div className="row">
@@ -22,9 +23,9 @@ const ServiceSection = () => {
                 <div className="detail-box">
                   <h5>Currency Wallet</h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    fact that a reader will be distracted by the readable
+                    content of a page when looking at its layout.
                   </p>
-                  <a href="">Read More</a>
                 </div>
               </div>
             </div>
@@ -36,9 +37,9 @@ const ServiceSection = () => {
                 <div className="detail-box">
                   <h5>Security Storage</h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    fact that a reader will be distracted by the readable
+                    content of a page when looking at its layout.
                   </p>
-                  <a href="">Read More</a>
                 </div>
               </div>
             </div>
@@ -50,15 +51,15 @@ const ServiceSection = () => {
                 <div className="detail-box">
                   <h5>Expert Support</h5>
                   <p>
-                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    fact that a reader will be distracted by the readable
+                    content of a page when looking at its layout.
                   </p>
-                  <a href="">Read More</a>
                 </div>
               </div>
             </div>
           </div>
           <div className="btn-box">
-            <a href="">View All</a>
+            <a href="/hizmetler">View All</a>
           </div>
         </div>
       </div>
